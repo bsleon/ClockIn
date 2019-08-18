@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: digital-7;
+   src: url(/assets/fonts/DSEG7-Modern/DSEG7Modern-Bold.ttf) format("truetype");
+  }
+  @font-face {
+    font-family: digital-14;
+   src: url(/assets/fonts/DSEG14-Modern/DSEG14Modern-Bold.ttf) format("truetype");
+  }
