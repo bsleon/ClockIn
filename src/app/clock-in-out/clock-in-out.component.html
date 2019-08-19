@@ -1,0 +1,15 @@
+<div>
+    <button (click)="clockIn($event)">Clock In</button>
+    <button (click)="clockOut($event)">Clock Out</button>
+</div>
+<div>
+    <label>clock:
+        <input [(ngModel)]="totalTime"/>
+    </label>
+</div>
+<div>
+        <label>Running Clocked In Time Today:
+            <!-- <div *ngIf="counter; else elseBlock">{{ clockedInHours }} {{ clockedInMinutes }} {{ clockedInSeconds }} </div> -->
+            <div *ngIf="counter; else elseBlock">{{ clockedInHours }}:{{clockedInMinutes}}:{{ clockedInSeconds }} </div>
+        </label>
+    </div>
