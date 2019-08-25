@@ -1,23 +1,24 @@
 import { OnInit } from '@angular/core';
 
 export class CalculateTime{
-    static originalHours: number;
-    static hours: string;
-    static minutes: string;
-    static seconds: string;
+    //static originalHours: number;
+    static currentHours: string;
+    static currentMinutes: string;
+    static currentSeconds: string;
     static ampm: string;
 
     public static setCurrentTime() {
       const time = new Date(Date.now());
-      this.originalHours = time.getHours();
-      var hour = this.originalHours;
+      //this.originalHours = time.getHours();
+      //var hour = this.originalHours;
+      var hour = time.getHours();
       var ampm = hour >= 12 ? "PM" : "AM";
       hour = hour % 12;
       hour = hour ? hour : 12;
 
-      this.hours = (hour + 0).toString();
-      this.minutes = this.addZero(time.getMinutes());
-      this.seconds = this.addZero(time.getSeconds());
+      this.currentHours = (hour + 0).toString();
+      this.currentMinutes = this.addZero(time.getMinutes());
+      this.currentSeconds = this.addZero(time.getSeconds());
       this.ampm = ampm;
     }
   

@@ -14,7 +14,7 @@ export class DigitalClockComponent implements OnInit {
   private timerId = null;
 
   ngOnInit() {
-    CalculateTime.updateTime();
+    CalculateTime.updateTime(); //initializes the current time loop
     this.timerId = this.updateTime();
   }
 
@@ -23,9 +23,9 @@ export class DigitalClockComponent implements OnInit {
   }
 
   private setCurrentTime() {
-    this.hours = CalculateTime.hours;
-    this.minutes = CalculateTime.minutes;
-    this.seconds = CalculateTime.seconds;
+    this.hours = CalculateTime.currentHours;
+    this.minutes = CalculateTime.currentMinutes;
+    this.seconds = CalculateTime.currentSeconds;
     this.ampm = CalculateTime.ampm;
 
   }

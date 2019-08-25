@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Context } from 'vm';
 import { CalculateTime } from '../calculateTime';
 
 @Component({
@@ -75,9 +74,9 @@ export class AnalogClockComponent implements OnInit {
   
    private drawTime(ctx, radius){
       var now = new Date();
-      var hour = parseInt(CalculateTime.hours);
-      var minute = parseInt(CalculateTime.minutes);
-      var second = parseInt(CalculateTime.seconds);
+      var hour = parseInt(CalculateTime.currentHours);
+      var minute = parseInt(CalculateTime.currentMinutes);
+      var second = parseInt(CalculateTime.currentSeconds);
       //hour
       //hour=hour%12;
       hour=(hour*Math.PI/6)+
