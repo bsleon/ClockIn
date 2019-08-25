@@ -2,6 +2,21 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.0.
 
+https://sparkdesignsystem.com/
+
+##TODO
+Punch History Table
+Toggle clock buttons
+Add total time today label
+Add total time this week label
+Remember clockin state if tab closed and open (write to local text file db?)
+Remember total time today and time this week/running daily total if tab closed and open (local db again)
+Add analog or digital option checkbox or both
+Add ability to select lunch length
+Predict clockout time
+Have timer turn red if you go over 8 hours or 40 hours a week
+Have popup/push notification clock in/out reminders for entered lunch time preferences or when 8 hours is approaching
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
