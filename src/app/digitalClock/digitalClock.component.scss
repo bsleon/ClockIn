@@ -1,0 +1,34 @@
+.clock{
+  font-size: 5rem;
+  padding: 0;
+  margin: 0;
+}
+#hour {
+  font-family: digital-7;
+}
+
+#min {
+  font-family: digital-7;
+}
+
+#second {
+  //border:solid;
+  padding: 0;
+  margin: 0;
+  font-family: digital-7;
+}
+
+#ampm {
+  //border:solid;
+  padding: 0;
+  margin: 0;
+  font-family: digital-14;
+}
+
+.secsampm {
+  //border:solid;
+  //padding-top: 10 px;
+  margin-top: 10px;
+  font-size: 2.0rem;
+}
+  

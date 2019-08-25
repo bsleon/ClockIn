@@ -4,7 +4,7 @@ import {CalculateTime} from '../calculateTime';
 @Component({
   selector: 'app-digital-clock',
   templateUrl: './digitalClock.component.html',
-  styleUrls: ['./digitalClock.component.css']
+  styleUrls: ['./digitalClock.component.scss']
 })
 export class DigitalClockComponent implements OnInit {
   hours: string;

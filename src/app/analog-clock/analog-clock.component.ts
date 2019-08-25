@@ -4,7 +4,7 @@ import { CalculateTime } from '../calculateTime';
 @Component({
   selector: 'app-analog-clock',
   templateUrl: './analog-clock.component.html',
-  styleUrls: ['./analog-clock.component.css']
+  styleUrls: ['./analog-clock.component.scss']
 })
 export class AnalogClockComponent implements OnInit {
   canvas:any;
@@ -39,25 +39,25 @@ export class AnalogClockComponent implements OnInit {
     var grad;
     ctx.beginPath();
     ctx.arc(0, 0, radius, 0, 2*Math.PI);
-    ctx.fillStyle = 'white';
+    ctx.fillStyle = '#F7DA9A'; //clock face
     ctx.fill();
     grad = ctx.createRadialGradient(0,0,radius*0.95, 0,0,radius*1.05);
-    grad.addColorStop(0, '#333');
-    grad.addColorStop(0.5, 'white');
-    grad.addColorStop(1, '#333');
+    grad.addColorStop(0, '#13A48E'); //inner rim gradient
+    grad.addColorStop(0.5, 'white'); //middle rim gradient
+    grad.addColorStop(1, '#13A48E'); //outer rim gradient
     ctx.strokeStyle = grad;
     ctx.lineWidth = radius*0.1;
     ctx.stroke();
     ctx.beginPath();
     ctx.arc(0, 0, radius*0.1, 0, 2*Math.PI);
-    ctx.fillStyle = '#333';
+    ctx.fillStyle = '#C8102E'; //numbers and center dot
     ctx.fill();
   }
   
    private drawNumbers(ctx, radius) {
     var ang;
     var num;
-    ctx.font = radius*0.15 + "px arial";
+    ctx.font = "bold " + radius*0.15 + "px arial";
     ctx.textBaseline="middle";
     ctx.textAlign="center";
     for(num = 1; num < 13; num++){
