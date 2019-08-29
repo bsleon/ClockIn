@@ -1,0 +1,357 @@
+html {
+	font-family: sans-serif;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	font-size: 10px;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+}
+
+body {
+	margin: 0;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #333;
+	background-color: #fff;
+}
+
+main {
+	-webkit-box-flex: 1 0 auto;
+	-ms-flex: 1 0 auto;
+	-webkit-flex: 1 0 auto;
+	flex: 1 0 auto
+}
+
+// article,
+// aside,
+// details,
+// figcaption,
+// figure,
+// footer,
+// header,
+// hgroup,
+// main,
+// menu,
+// nav,
+// section,
+// summary {
+// 	display: block
+// }
+
+h1 {
+	margin: .67em 0;
+	font-size: 2em
+}
+
+.color-bar {
+	-webkit-box-flex: none;
+	-ms-flex: none;
+	-webkit-flex: none;
+	flex: none;
+	background: linear-gradient(to right, #6c9f2e 0, #6c9f2e 16.667%, #2081bf 16.667%, #2081bf 33.334%, #0c4569 33.334%, #0c4569 50%, #ff9b00 50%, #ff9b00 66.667%, #b5121b 66.667%, #b5121b 83.334%, #551387 83.334%, #551387);
+	display: block;
+	height: 10px;
+	width: 100%
+}
+
+.container {
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto
+}
+
+.jumbotron .container {
+	max-width: 100%
+}
+
+@media screen and (min-width:768px) {
+	.jumbotron {
+		padding-top: 48px;
+		padding-bottom: 48px
+	}
+	.container .jumbotron,
+	.container-fluid .jumbotron {
+		padding-right: 60px;
+		padding-left: 60px
+	}
+	.jumbotron .h1,
+	.jumbotron h1 {
+		font-size: 63px
+	}
+}
+
+.site-header,
+.site-footer {
+	-webkit-box-flex: none;
+	-ms-flex: none;
+	-webkit-flex: none;
+	flex: none
+}
+
+
+.menu-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-bottom: 20px
+}
+
+.logo-container {
+	display: flex;
+	flex-direction: row;
+	align-items: center
+}
+
+.history-info-container {
+	font-size: 14px;
+	color: #0c4569;
+	font-family: "Quatro-Slab", "Lucida Bright", "times new roman", serif
+}
+
+.info-container {
+	display: flex;
+	align-items: center
+}
+
+.info-container:before {
+	font-family: 'FontAwesome';
+	content: "";
+	color: #2081bf;
+	font-size: 32px;
+	margin-right: 10px
+}
+
+.info-container .info-message {
+	font-weight: bold;
+	color: #0c4569;
+	font-size: 21px;
+	align-items: center
+}
+.tracking-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between
+}
+
+.site-header a,
+.site-footer a {
+	text-decoration: none
+}
+
+.site-header a:hover,
+.site-footer a:hover {
+	text-decoration: underline
+}
+
+.site-header,
+.site-footer {
+	-webkit-box-flex: none;
+	-ms-flex: none;
+	-webkit-flex: none;
+	flex: none
+}
+
+.site-footer {
+	padding-top: 15px;
+	padding-bottom: 15px;
+	margin-top: 60px;
+	margin-bottom: 15px;
+	display: block;
+	text-align: center
+}
+
+.site-footer:before {
+	border-top: 2px solid #e5e5e5;
+	width: 100%;
+	content: "";
+	margin-bottom: 30px;
+	display: block
+}
+
+@media(max-width:343px) {
+	.site-footer {
+		padding-left: 0;
+		padding-right: 0
+	}
+}
+
+.footer-text {
+	position: relative;
+	padding-left: 3em;
+	color: #5a5a5a;
+	font-family: "Quatro-Slab", "Lucida Bright", "Times New Roman", serif;
+	font-weight: bold;
+	font-size: 14px;
+	display: inline-block
+}
+
+.footer-text:before {
+	position: absolute;
+	background-image: url('http://adn.mi.corp.rockfin.com/BBStylez/Prod/Small-Backbone-Logo.svg');
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position-y: 50%;
+	content: "";
+	width: 100%;
+	height: 130%;
+	top: -15%;
+	left: 0;
+	z-index: -1
+}
+
+.footer-tagline {
+	font-size: 12px
+}
+
+.navbar-toggle {
+	position: relative;
+	float: right;
+	padding: 9px 10px;
+	margin-top: 8px;
+	margin-right: 15px;
+	margin-bottom: 8px;
+	background-color: transparent;
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 4px
+}
+
+.QuickClockLogo:hover {
+	text-decoration: none!important
+}
+
+.QuickClockLogo {
+	padding-left: 0;
+	height: auto
+}
+
+.QuickClockLogo img {
+	height: 80px;
+	max-width: 100%
+}
+
+.QuickClockLogo::before {
+	background-image: none
+}
+
+.logo-text {
+	margin-left: 10px;
+	font-weight: bold;
+	color: #0c4569;
+	font-size: 28px;
+	margin-top: 15px
+}
+
+.profile-container {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end
+}
+
+.profile-container .profile-image__container {
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+	overflow: hidden;
+	border: 1px solid #ababab
+}
+
+.profile-container .profile-image__container .profile-image {
+	width: 60px;
+	height: 60px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position-y: 50%
+}
+
+.profile-container .profile-image__name-container {
+	margin-left: 10px
+}
+
+.profile-container .profile-image__name-container .profile-image__name-label {
+	font-weight: bold;
+	color: #0c4569
+}
+
+.profile-container .profile-image__name-container .profile-image__name-label>.badge {
+	margin-left: 20px
+}
+
+.profile-container .profile-image__name-container .profile-image__sub-label {
+	color: #aaa
+}
+
+.split-header {
+	padding-bottom: 5px;
+	display: table;
+	width: 100%;
+	border-bottom: 2px solid #ddd
+}
+
+.split-header.split-header--no-border {
+	border: none
+}
+
+.split-header.split-header--top-spacing {
+	padding-top: 30px
+}
+
+.split-header.split-header--bottom-spacing {
+	margin-bottom: 20px
+}
+
+.split-header .split-header__header {
+	display: table-cell;
+	vertical-align: bottom;
+	margin-bottom: 0
+}
+
+.split-header .split-header__link-container {
+	display: table-cell;
+	vertical-align: bottom;
+	text-align: right;
+	min-width: 60px
+}
+
+.split-header .split-header__tagline {
+	display: table-footer-group;
+	font-size: 14px;
+	color: #222;
+	font-family: "Quatro-Slab", "Lucida Bright", "times new roman", serif
+}
+
+.tracking-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: "Quatro-Slab", "Lucida Bright", "times new roman", serif;
+	color: #0c4569;
+	font-weight: bold
+}
+
+h1 {
+	font-size: 42px;
+	line-height: 1.3
+}
+
+h2 {
+	font-size: 26px;
+	line-height: 1.3
+}
+
+h3 {
+	font-size: 21px;
+	line-height: 1.3
+}
