@@ -16,6 +16,7 @@ Add ability to select lunch length
 Predict clockout time
 Have timer turn red if you go over 8 hours or 40 hours a week
 Have popup/push notification clock in/out reminders for entered lunch time preferences or when 8 hours is approaching
+Blinking red tab alerts
 
 ## Development server
 
