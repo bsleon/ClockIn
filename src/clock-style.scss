@@ -50,7 +50,7 @@ h1 {
 	flex: none;
 	background: linear-gradient(to right, #6c9f2e 0, #6c9f2e 16.667%, #2081bf 16.667%, #2081bf 33.334%, #0c4569 33.334%, #0c4569 50%, #ff9b00 50%, #ff9b00 66.667%, #b5121b 66.667%, #b5121b 83.334%, #551387 83.334%, #551387);
 	display: block;
-	height: 10px;
+	height: 20px;
 	width: 100%
 }
 
@@ -116,7 +116,12 @@ h1 {
 
 .info-container:before {
 	font-family: 'FontAwesome';
-	content: "";
+	// content: url(/assets/images/anonAvatar.png);
+	background-image: url(/assets/images/info.png);
+	background-size: 30px 30px;
+	width: 30px;
+	height: 30px;
+	content:"";
 	color: #2081bf;
 	font-size: 32px;
 	margin-right: 10px
@@ -304,10 +309,15 @@ h1 {
 	margin-bottom: 20px
 }
 
+.split-header__header{
+	padding-bottom: 10px;
+}
+
 .split-header .split-header__header {
 	display: table-cell;
 	vertical-align: bottom;
-	margin-bottom: 0
+	margin-bottom: 10px;
+	
 }
 
 .split-header .split-header__link-container {
@@ -321,7 +331,7 @@ h1 {
 	display: table-footer-group;
 	font-size: 14px;
 	color: #222;
-	font-family: "Quatro-Slab", "Lucida Bright", "times new roman", serif
+	font-family: "Quatro-Slab", "Lucida Bright", "times new roman", serif;
 }
 
 .tracking-container {
