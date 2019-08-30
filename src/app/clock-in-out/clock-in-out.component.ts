@@ -20,6 +20,7 @@ export class ClockInOutComponent implements OnInit {
   counter: number;
   timerRef;
   clockedIn: boolean = false;
+  savedTime: number;
   //startText = 'Start';
   //private clockedIn: boolean = false;
 
@@ -33,6 +34,7 @@ export class ClockInOutComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.savedTime = localStorage.saveTheTime;
   }
 
   clockIn() {
@@ -51,6 +53,16 @@ export class ClockInOutComponent implements OnInit {
       //this.totalTime += ((this.clockOutTime - this.clockInTime) / 1000).toFixed(2);
       this.toggleTimer();
     }
+  }
+
+  saveTime() {
+    if(typeof(Storage) != "undefined"){
+      if(localStorage.saveTheTime){
+        localStorage.saveTheTime = this.counter;
+      }
+      else localStorage.saveTheTime = 0;
+    }
+    alert("Save Time is: " + localStorage.saveTheTime);
   }
 
   toggleTimer() {

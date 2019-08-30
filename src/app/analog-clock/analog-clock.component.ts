@@ -12,6 +12,7 @@ export class AnalogClockComponent implements OnInit {
   radius:number;
   offset:number;
   radiusOffset:number
+  analogIsOn:boolean = false;
 
   ngOnInit() {
     this.offset = 50; //change to increase/decrease size of clock
@@ -100,6 +101,10 @@ export class AnalogClockComponent implements OnInit {
       ctx.lineTo(0, -length);
       ctx.stroke();
       ctx.rotate(-pos);
+  }
+
+  toggleAnalogClock(){
+    this.analogIsOn = !this.analogIsOn;
   }
 
 }

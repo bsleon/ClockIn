@@ -1,6 +1,8 @@
 <div sprk-u-JavaScript>
-    <button (click)="clockIn($event)" class="sprk-c-Button buttonClockIn" [attr.disabled]="clockedIn ? 'disabled': null" [ngClass]="{'sprk-is-Disabled':clockedIn}">Clock In</button>
-    <button (click)="clockOut($event)" class="sprk-c-Button sprk-is-Disabled buttonClockOut" [attr.disabled]="clockedIn ? null: 'disabled'" [ngClass]="{'sprk-is-Disabled':!clockedIn}">Clock Out</button>
+    <button (click)="clockIn($event)" class="sprk-c-Button buttonClockIn" [attr.disabled]="clockedIn ? 'disabled': null"
+        [ngClass]="{'sprk-is-Disabled':clockedIn}">Clock In</button>
+    <button (click)="clockOut($event)" class="sprk-c-Button sprk-is-Disabled buttonClockOut"
+        [attr.disabled]="clockedIn ? null: 'disabled'" [ngClass]="{'sprk-is-Disabled':!clockedIn}">Clock Out</button>
 </div>
 <div>
     <!-- <label>clock:
@@ -8,9 +10,14 @@
     </label> -->
 </div>
 <div>
-        <label>Total Clocked In Time Today:
-            <!-- <div *ngIf="counter; else elseBlock">{{ clockedInHours }}:{{clockedInMinutes}}:{{ clockedInSeconds }} </div> -->
-            <div *ngIf="counter; else elseBlock">{{ clockedInHours }}:{{ clockedInMinutes }}:{{ clockedInSeconds }} </div>
-            <ng-template #elseBlock><div>00:00:00</div></ng-template>
-        </label>
-    </div>
+    <label>Total Clocked In Time Today:
+        <!-- <div *ngIf="counter; else elseBlock">{{ clockedInHours }}:{{clockedInMinutes}}:{{ clockedInSeconds }} </div> -->
+        <div *ngIf="counter; else elseBlock">{{ clockedInHours }}:{{ clockedInMinutes }}:{{ clockedInSeconds }} </div>
+        <ng-template #elseBlock>
+            <div>00:00:00</div>
+        </ng-template>
+    </label>
+    <button (click)="saveTime()">Save Time</button>
+    <label>{{savedTime}}</label>
+
+</div>
