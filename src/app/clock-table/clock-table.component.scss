@@ -1,3 +1,34 @@
 .clockin-table, th, tr, td{
     border: solid 1px black;
 }
+
+.table-message {
+    font-family: "Myriad-Pro","Lucida Grande","Lucida Sans","Lucida Sans Unicode","Arial","Helvetica",sans-serif;
+    font-size: 16px;
+    align-items: center;
+    padding-bottom: 25px;
+}
+
+div {
+    display: block;
+}
+
+.history-info-container {
+    color: rgb(151, 207, 243);
+}
+
+.history-info-container {
+    font-size: 14px;
+    font-family: "Quatro-Slab","Lucida Bright","times new roman",serif;
+}
+
+.table-responsive {
+    border-top-color: rgb(58, 58, 58);
+    border-right-color: rgb(58, 58, 58);
+    border-bottom-color: rgb(58, 58, 58);
+    border-left-color: rgb(58, 58, 58);
+}
+
+.table > thead > tr {
+    background-color: rgb(27, 106, 155);
+}
