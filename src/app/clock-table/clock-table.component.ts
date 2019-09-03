@@ -16,8 +16,6 @@ export class ClockTableComponent implements OnInit {
 
   ngOnInit() {
     //this.clockInComp = new ClockInOutComponent();
-
-
     this.columns = ["Date", "Clocked_In", "Clocked_Out"];
     this.rows = [];
 
@@ -30,9 +28,10 @@ export class ClockTableComponent implements OnInit {
       {
         Date: this.serveTime.tableDate(),
         Clocked_In: this.serveTime.clockInTime,
-        Clocked_Out: this.serveTime.clockOutTime
+        Clocked_Out: this.serveTime.clockOutTime,
       }
     );
+
   }
 
 }
