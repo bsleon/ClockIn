@@ -15,6 +15,7 @@ import { TitleBlinkerService } from './title-blinker.service';
 import { SparkAngularModule } from "@sparkdesignsystem/spark-angular";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ClockTableComponent } from './clock-table/clock-table.component';
+import { OptionsDisplayComponent } from './options-display/options-display.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ClockTableComponent } from './clock-table/clock-table.component';
     DigitalClockComponent,
     AnalogClockComponent,
     ClockInOutComponent,
-    ClockTableComponent
+    ClockTableComponent,
+    OptionsDisplayComponent
   ],
   imports: [
     BrowserModule,
