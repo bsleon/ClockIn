@@ -31,47 +31,57 @@
 
 </header>
 
-<main class="container">
+<table class="mainTable">
+    <tr>
+        <td class="mainTableData">
+            <main class="container">
 
 
-    <div class="split-header split-header--bottom-spacing">
-        <h2 class="split-header__header">Tracking</h2>
-        <div class="split-header__tagline">Use the buttons below to track your time.</div>
-    </div>
+                <div class="split-header split-header--bottom-spacing">
+                    <h2 class="split-header__header">Tracking</h2>
+                    <div class="split-header__tagline">Use the buttons below to track your time.</div>
+                </div>
 
-    <div class="tracking-container">
-        <div class="info-container">
-            <div class="info-message">Timecard corrections must be made by your Team Leader in Workday</div>
-        </div>
+                <div class="tracking-container">
+                    <div class="info-container">
+                        <div class="info-message">Timecard corrections must be made by your Team Leader in Workday</div>
+                    </div>
 
-    </div>
+                </div>
 
-    <!-- <div class="container"><app-digitalClock></app-digitalClock></div> -->
-    <div class="digitalClock">
-            <app-digital-clock></app-digital-clock>
-        </div>
-    <div class="clockInOut">
-        <app-clock-in-out></app-clock-in-out>
-    </div>
-
-
-    <div class="clockTable">
-        <app-clock-table></app-clock-table>
-    </div>
-
-</main>
+                <!-- <div class="container"><app-digitalClock></app-digitalClock></div> -->
+                <div class="digitalClock">
+                    <app-digital-clock></app-digital-clock>
+                </div>
+                <div class="clockInOut">
+                    <app-clock-in-out></app-clock-in-out>
+                </div>
 
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+            </main>
+        </td>
+
+        <td class="mainTableData">
+            <div class="container">
+                <h3>Additional informational elements go here including total time clocked in for day/week, and any selectors etc.</h3>
+                <br>
+                <button style="margin:5px" class="sprk-c-Button">Click Me</button>
+                <button style="margin:5px" class="sprk-c-Button">Click Me</button>
+                <button style="margin:5px" class="sprk-c-Button">Click Me</button>
+            </div>
+        </td>
+
+    </tr>
+
+</table>
+
+<div class="clockTable container">
+    <app-clock-table></app-clock-table>
+</div>
 
 
 
-<footer class="container site-footer">
+<footer class="site-footer">
 
     <div class="footer-text">
         Powered by <a href="">Footer Content Goes Here</a>

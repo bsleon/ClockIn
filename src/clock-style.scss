@@ -55,10 +55,17 @@ h1 {
 }
 
 .container {
-	padding-right: 15px;
-	padding-left: 15px;
+	padding-right: 20px;
+	padding-left: 20px;
+	padding-top:20px;
+	padding-bottom:20px;
 	margin-right: auto;
-	margin-left: auto
+	margin-left: auto;
+	margin-top:20px;
+	margin-bottom:20px;
+	background-color: #F7F7F7;
+	border-radius: 10px;
+	border: 1px solid rgba(0, 0, 0, .05);
 }
 
 .jumbotron .container {
@@ -83,10 +90,10 @@ h1 {
 
 .site-header,
 .site-footer {
-	-webkit-box-flex: none;
-	-ms-flex: none;
-	-webkit-flex: none;
-	flex: none
+	// -webkit-box-flex: none;
+	// -ms-flex: none;
+	// -webkit-flex: none;
+	// flex: none
 }
 
 
@@ -130,13 +137,13 @@ h1 {
 .info-container .info-message {
 	font-weight: bold;
 	color: #0c4569;
-	font-size: 21px;
+	font-size: 15px;
 	align-items: center
 }
 .tracking-container {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between
+	// display: flex;
+	// flex-direction: row;
+	// justify-content: space-between
 }
 
 .site-header a,
