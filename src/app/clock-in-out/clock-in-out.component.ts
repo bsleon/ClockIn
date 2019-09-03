@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener, Input } from '@angular/core';
 import { CalculateTime } from '../calculateTime';
 import { ClockTableComponent } from '../clock-table/clock-table.component';
 import { ServeTimeService } from '../serve-time.service';
@@ -44,7 +44,7 @@ export class ClockInOutComponent implements OnInit {
 
   clockIn() {
     if (!this.clockedIn) {
-      this.clockInTime = new Date(Date.now());
+      this.clockInTime = new Date();
       //this.totalTime = 0;
       this.runningTime = 0;
       this.toggleTimer();
@@ -58,8 +58,14 @@ export class ClockInOutComponent implements OnInit {
       }
       else localStorage.saveClock = 0;
     }
+    this.serveTime.rows.push (
+      {
+        Date: this.serveTime.tableDate(),
+        Clocked_In: this.serveTime.clockInTime,
+        Clocked_Out: this.serveTime.clockOutTime,
+      }
+    );
     alert("You clocked in at: " + localStorage.saveClock);
-
   }
 
   clockOut() {

@@ -32,3 +32,24 @@ div {
 .table > thead > tr {
     background-color: rgb(27, 106, 155);
 }
+
+.info-container:before {
+	font-family: 'FontAwesome';
+	// content: url(/assets/images/anonAvatar.png);
+	background-image: url(/assets/images/info.png);
+	background-size: 30px 30px;
+	width: 30px;
+	height: 30px;
+	content:"";
+	color: #2081bf;
+	font-size: 32px;
+    margin-right: 10px;
+}
+
+.info-container .info-message {
+	font-weight: bold;
+	color: #0c4569;
+	font-size: 15px;
+    align-items: center;
+    padding-bottom: 25px;
+}
