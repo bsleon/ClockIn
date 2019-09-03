@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CalculateTime } from '../calculateTime';
 import { ClockTableComponent } from '../clock-table/clock-table.component';
 import { ServeTimeService } from '../serve-time.service';
+import { TitleBlinkerService } from '../title-blinker.service';
 
 @Component({
   selector: 'app-clock-in-out',
@@ -26,7 +27,7 @@ export class ClockInOutComponent implements OnInit {
   //startText = 'Start';
   //private clockedIn: boolean = false;
 
-  constructor(private serveTime:ServeTimeService) {
+  constructor(private serveTime:ServeTimeService, private titleBlinker:TitleBlinkerService) {
     this.counter = 0;
     //this.totalTime = 0;
     this.clockedInHours = 0;
