@@ -24,6 +24,7 @@ export class ClockInOutComponent implements OnInit {
   timerRef;
   clockedIn: boolean = false;
   savedTime: number;
+  savedClock: number;
   //startText = 'Start';
   //private clockedIn: boolean = false;
 
@@ -38,6 +39,7 @@ export class ClockInOutComponent implements OnInit {
 
   ngOnInit() {
     this.savedTime = localStorage.saveTheTime;
+    this.savedClock = localStorage.saveClock;
   }
 
   clockIn() {
@@ -50,6 +52,13 @@ export class ClockInOutComponent implements OnInit {
       CalculateTime.setCurrentTime();
       this.serveTime.clockInTime = CalculateTime.currentTime;
     }
+    if(typeof(Storage) != "undefined"){
+      if(localStorage.saveClock){
+        localStorage.saveClock = this.serveTime.clockInTime;
+      }
+      else localStorage.saveClock = 0;
+    }
+    alert("You clocked in at: " + localStorage.saveClock);
 
   }
 
