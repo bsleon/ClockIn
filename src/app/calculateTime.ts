@@ -6,6 +6,7 @@ export class CalculateTime{
     static currentMinutes: string;
     static currentSeconds: string;
     static ampm: string;
+    static currentTime: string;
 
     public static setCurrentTime() {
       const time = new Date(Date.now());
@@ -20,6 +21,8 @@ export class CalculateTime{
       this.currentMinutes = this.addZero(time.getMinutes());
       this.currentSeconds = this.addZero(time.getSeconds());
       this.ampm = ampm;
+
+      this.currentTime = this.currentHours + ":" + this.currentMinutes + this.ampm;
     }
   
     public static updateTime() {

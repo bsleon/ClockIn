@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ClockInOutComponent } from '../clock-in-out/clock-in-out.component';
+import { ServeTimeService } from '../serve-time.service';
 
 @Component({
   selector: 'app-clock-table',
@@ -6,32 +8,31 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./clock-table.component.scss']
 })
 export class ClockTableComponent implements OnInit {
-
+  clockInComp:ClockInOutComponent;
   columns: string[];
   rows: any[];
 
-  constructor() { }
+  constructor(private serveTime:ServeTimeService) { }
 
   ngOnInit() {
-    this.columns = ["first", "second", "third"];
-    this.rows = [
-      {
-        first: 'firstdata',
-        second: 'seconddata',
-        third: 'thirddata'
-      },
-      {
-        first: 'fourthdata',
-        second: 'fifthdata',
-        third: 'sixthdata'
-      }
-    ];
+    //this.clockInComp = new ClockInOutComponent();
+
+
+    this.columns = ["Date", "Clocked_In", "Clocked_Out"];
+    this.rows = [];
 
   }
 
-  addColumn(){
-    this.columns.push("anotherCol");
-    this.rows.push({first: 'test', second: 'test', third: 'test'});
+  public addColumn() {
+    //this.columns.push("anotherCol");
+    //this.rows.push({ first: 'test', second: 'test', third: 'test' });
+    this.rows.push (
+      {
+        Date: this.serveTime.tableDate(),
+        Clocked_In: this.serveTime.clockInTime,
+        Clocked_Out: this.serveTime.clockOutTime
+      }
+    );
   }
 
 }

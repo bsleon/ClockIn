@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CalculateTime } from '../calculateTime';
+import { ClockTableComponent } from '../clock-table/clock-table.component';
+import { ServeTimeService } from '../serve-time.service';
 
 @Component({
   selector: 'app-clock-in-out',
@@ -8,8 +10,8 @@ import { CalculateTime } from '../calculateTime';
 })
 export class ClockInOutComponent implements OnInit {
 
-  clockInTime: any;
-  clockOutTime: any;
+  public clockInTime: any;
+  public clockOutTime: any;
   //totalTime: any;
   runningTime: any;
   clockedInHours: any;
@@ -24,7 +26,7 @@ export class ClockInOutComponent implements OnInit {
   //startText = 'Start';
   //private clockedIn: boolean = false;
 
-  constructor() {
+  constructor(private serveTime:ServeTimeService) {
     this.counter = 0;
     //this.totalTime = 0;
     this.clockedInHours = 0;
@@ -43,6 +45,9 @@ export class ClockInOutComponent implements OnInit {
       //this.totalTime = 0;
       this.runningTime = 0;
       this.toggleTimer();
+      //this.clockTable.addColumn(this.clockInTime);
+      CalculateTime.setCurrentTime();
+      this.serveTime.clockInTime = CalculateTime.currentTime;
     }
 
   }
@@ -52,6 +57,9 @@ export class ClockInOutComponent implements OnInit {
       this.clockOutTime = new Date(Date.now());
       //this.totalTime += ((this.clockOutTime - this.clockInTime) / 1000).toFixed(2);
       this.toggleTimer();
+      this.serveTime.clockOutTime = this.clockOutTime;
+      CalculateTime.setCurrentTime();
+      this.serveTime.clockOutTime = CalculateTime.currentTime;
     }
   }
 
