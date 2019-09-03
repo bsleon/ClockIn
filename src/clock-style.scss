@@ -22,22 +22,6 @@ main {
 	flex: 1 0 auto;
 }
 
-// article,
-// aside,
-// details,
-// figcaption,
-// figure,
-// footer,
-// header,
-// hgroup,
-// main,
-// menu,
-// nav,
-// section,
-// summary {
-// 	display: block
-// }
-
 h1 {
 	margin: .67em 0;
 	font-size: 2em
@@ -63,9 +47,9 @@ h1 {
 	margin-left: auto;
 	margin-top:20px;
 	margin-bottom:20px;
-	background-color: #F7F7F7;
+	background-color: rgba(191,236,229, .4);
 	border-radius: 10px;
-	border: 1px solid rgba(0, 0, 0, .05);
+	border: 2px solid rgba(0, 0, 0, .05);
 }
 
 .jumbotron .container {
@@ -88,12 +72,16 @@ h1 {
 	}
 }
 
-.site-header,
-.site-footer {
+.site-header{
 	// -webkit-box-flex: none;
 	// -ms-flex: none;
 	// -webkit-flex: none;
 	// flex: none
+	background-color: rgba(164,199,225,.4) !important;
+}
+
+.site-footer{
+
 }
 
 
