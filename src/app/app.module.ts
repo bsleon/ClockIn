@@ -12,13 +12,15 @@ import { ClockInOutComponent } from './clock-in-out/clock-in-out.component';
 //Spark Stuff
 import { SparkAngularModule } from "@sparkdesignsystem/spark-angular";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ClockTableComponent } from './clock-table/clock-table.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DigitalClockComponent,
     AnalogClockComponent,
-    ClockInOutComponent
+    ClockInOutComponent,
+    ClockTableComponent
   ],
   imports: [
     BrowserModule,

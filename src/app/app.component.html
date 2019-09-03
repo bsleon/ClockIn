@@ -1,4 +1,80 @@
-<!-- <div class="container"><app-digitalClock></app-digitalClock></div> -->
-<div class="clockInOut"><app-clock-in-out></app-clock-in-out></div>
-<div class="digitalClock"><app-digital-clock></app-digital-clock></div>
-<div class="analogClock"><app-analog-clock></app-analog-clock></div>
+<div class="color-bar"></div>
+
+<header class="container site-header">
+
+    <div class="menu-container">
+
+        <div class="logo-container">
+            <div class="analogClock">
+                <app-analog-clock></app-analog-clock>
+            </div>
+            <!-- <a href="/"><img id="QuickClock_logo" src="/assets/images/wd-applet-time.png" alt="Clock In and Out logo"
+          style="height: 100px; margin-top: 10px;" /></a> -->
+            <div class="logo-text">Clock in and out</div>
+        </div>
+
+        <div class="profile-container">
+
+            <div class="profile-image__container">
+                <div class="profile-image" style="background-image: url('/assets/images/anonAvatar.png')">
+                </div>
+            </div>
+
+            <div class="profile-image__name-container">
+                <div class="profile-image__name-label">Your Name</div>
+                <div class="profile-image__sub-label">Job Title</div>
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+<main class="container">
+
+
+    <div class="split-header split-header--bottom-spacing">
+        <h2 class="split-header__header">Tracking</h2>
+        <div class="split-header__tagline">Use the buttons below to track your time.</div>
+    </div>
+
+    <div class="tracking-container">
+        <div class="info-container">
+            <div class="info-message">Timecard corrections must be made by your Team Leader in Workday</div>
+        </div>
+
+    </div>
+
+    <!-- <div class="container"><app-digitalClock></app-digitalClock></div> -->
+    <div class="digitalClock">
+            <app-digital-clock></app-digital-clock>
+        </div>
+    <div class="clockInOut">
+        <app-clock-in-out></app-clock-in-out>
+    </div>
+
+    <div class="clockTable">
+        <app-clock-table></app-clock-table>
+    </div>
+
+</main>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+<footer class="container site-footer">
+
+    <div class="footer-text">
+        Powered by <a href="">Footer Content Goes Here</a>
+        <div class="footer-tagline">
+            Strengthen.Inspire.Dream.Do.Drive.Enjoy.
+        </div>
+    </div>
+</footer>

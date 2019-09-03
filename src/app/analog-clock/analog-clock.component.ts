@@ -12,10 +12,10 @@ export class AnalogClockComponent implements OnInit {
   radius:number;
   offset:number;
   radiusOffset:number
-  analogIsOn:boolean = false;
+  analogIsOn:boolean = true;
 
   ngOnInit() {
-    this.offset = 50; //change to increase/decrease size of clock
+    this.offset = 5; //change to increase/decrease size of clock
     this.canvas = document.getElementById("canvas"); 
     this.ctx = this.canvas.getContext("2d");
     this.radius = (this.canvas.height/2);

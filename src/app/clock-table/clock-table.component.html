@@ -1,0 +1,15 @@
+<button (click)="addColumn()">Add col</button>
+
+<table class="clockin-table">
+    <tr>
+        <th *ngFor="let col of columns">
+            {{col}} 
+        </th>
+    </tr>
+    <tr *ngFor="let row of rows">
+        <!-- {{row}} -->
+        <td *ngFor="let col of columns">
+            {{row[col]}}
+        </td>
+    </tr>
+</table>
