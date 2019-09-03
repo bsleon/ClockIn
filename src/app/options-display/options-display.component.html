@@ -16,26 +16,34 @@
 </div>
 
 <!-- check boxes -->
-<div class="checkbox">
-    <label><input type="checkbox" value="">Option 1</label>
-</div>
-<div class="checkbox">
-    <label><input type="checkbox" value="">Option 2</label>
-</div>
-<div class="checkbox disabled">
-    <label><input type="checkbox" value="" disabled>Option 3</label>
+<div class="row">
+    <div class="col">
+        <div class="checkbox">
+            <label><input type="checkbox" value="">Option 1</label>
+        </div>
+        <div class="checkbox">
+            <label><input type="checkbox" value="">Option 2</label>
+        </div>
+        <div class="checkbox disabled">
+            <label><input type="checkbox" value="" disabled>Option 3</label>
+        </div>
+    </div>
+
+    <!-- radio buttons -->
+    <div class="col">
+        <div class="radio">
+            <label><input type="radio" name="optradio" checked>Option 1</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="optradio">Option 2</label>
+        </div>
+        <div class="radio disabled">
+            <label><input type="radio" name="optradio" disabled>Option 3</label>
+        </div>
+    </div>
+    
 </div>
 
-<!-- radio buttons -->
-<div class="radio">
-    <label><input type="radio" name="optradio" checked>Option 1</label>
-</div>
-<div class="radio">
-    <label><input type="radio" name="optradio">Option 2</label>
-</div>
-<div class="radio disabled">
-    <label><input type="radio" name="optradio" disabled>Option 3</label>
-</div>
 
 <label>{{savedClock}}</label>
 <br>
