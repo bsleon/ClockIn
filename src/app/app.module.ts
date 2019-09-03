@@ -9,6 +9,7 @@ import { DigitalClockComponent } from './digitalClock/digitalClock.component';
 import { AnalogClockComponent } from './analog-clock/analog-clock.component';
 import { ClockInOutComponent } from './clock-in-out/clock-in-out.component';
 import { ServeTimeService } from './serve-time.service';
+import { TitleBlinkerService } from './title-blinker.service';
 
 //Spark Stuff
 import { SparkAngularModule } from "@sparkdesignsystem/spark-angular";
@@ -30,7 +31,9 @@ import { ClockTableComponent } from './clock-table/clock-table.component';
     SparkAngularModule,
     BrowserAnimationsModule
   ],
-  providers: [ServeTimeService],
+  providers: [
+    ServeTimeService, 
+    TitleBlinkerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
