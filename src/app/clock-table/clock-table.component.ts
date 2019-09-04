@@ -8,7 +8,6 @@ import { ServeTimeService } from '../serve-time.service';
   styleUrls: ['./clock-table.component.scss']
 })
 export class ClockTableComponent implements OnInit {
-  clockInComp:ClockInOutComponent;
   columns: string[];
   date = new Date();
   uptoDate = new Date();
@@ -16,11 +15,10 @@ export class ClockTableComponent implements OnInit {
   constructor(private serveTime:ServeTimeService) { }
 
   ngOnInit() {
-    //this.clockInComp = new ClockInOutComponent();
     this.columns = ["Date", "Clocked_In", "Clocked_Out"];
     this.serveTime.rows = [];
     this.date = new Date();
-    this.uptoDate.setDate( this.date.getDate() + 3 );
+    this.date.setDate( this.date.getDate() + 3 );
   }
 
 
