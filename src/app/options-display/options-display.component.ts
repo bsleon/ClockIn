@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CalculateTime } from '../calculateTime';
+import { timeout } from 'q';
 
 @Component({
   selector: 'app-options-display',

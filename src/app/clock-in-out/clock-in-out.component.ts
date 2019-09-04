@@ -58,6 +58,7 @@ export class ClockInOutComponent implements OnInit {
       }
       else localStorage.saveClock = 0;
     }
+    
     this.serveTime.rows.push(
       {
         Date: this.serveTime.tableDate(),
