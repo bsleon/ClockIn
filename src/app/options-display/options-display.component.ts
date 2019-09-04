@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ServeTimeService } from '../serve-time.service';
 
 @Component({
   selector: 'app-options-display',
@@ -7,7 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OptionsDisplayComponent implements OnInit {
 
-  constructor() { }
+  count:any;
+  clockedInHours:any;
+  clockedInMinutes:any;
+  clockedInSeconds:any;
+
+  constructor(public serveTime:ServeTimeService) { 
+ 
+  }
 
   ngOnInit() {
   }

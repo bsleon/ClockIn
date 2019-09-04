@@ -9,10 +9,27 @@ export class ServeTimeService {
 
   clockInTime:any;
   clockOutTime:any;
-  
+  clockTable:ClockTableComponent;
+  clockInOut:ClockInOutComponent;
+  runningTime: any;
+  clockedInHours: any;
+  clockedInMinutes: any;
+  clockedInSeconds: any;
+  clockedInMilliseconds: any;
   rows: any[];
+  
+  counter: number;
+  timerRef;
+  clockedIn: boolean = false;
 
-  constructor() { }
+  constructor() {
+    this.counter = 0;
+    //this.totalTime = 0;
+    this.clockedInHours = 0;
+    this.clockedInMinutes = 0;
+    this.clockedInSeconds = 0;
+    this.clockedInMilliseconds = 0;
+   }
 
   tableDate() {
 
@@ -23,6 +40,39 @@ export class ServeTimeService {
     var currentDate = weekDay + ", " + month + " " + dayOfMonth;
     
     return currentDate;
+  }
+
+  toggleTimer() {
+    this.clockedIn = !this.clockedIn;
+    if (this.clockedIn) {
+      //this.startText = 'Stop';
+      const startTime = Date.now() - (this.counter || 0);
+      this.timerRef = setInterval(() => {
+        this.counter = Date.now() - startTime;
+        this.clockedInMilliseconds = (this.counter % 1000) / 100;
+        this.clockedInSeconds = Math.floor(this.counter / 1000) % 60;
+        this.clockedInMinutes = Math.floor((this.counter / (1000 * 60)) % 60);
+        this.clockedInHours = Math.floor((this.counter / (1000 * 60 * 60)) % 24);
+
+        this.clockedInHours = (this.clockedInHours < 10) ? "0" + this.clockedInHours : this.clockedInHours;
+        this.clockedInMinutes = (this.clockedInMinutes < 10) ? "0" + this.clockedInMinutes : this.clockedInMinutes;
+        this.clockedInSeconds = (this.clockedInSeconds < 10) ? "0" + this.clockedInSeconds : this.clockedInSeconds;
+      });
+
+    }
+    else {
+      //this.startText = 'Resume';
+      clearInterval(this.timerRef);
+    }
+
+  }
+
+  getCounter(){
+    return this.counter;
+  }
+
+  setClockedIn(){
+    return this.clockedIn
   }
 
 }

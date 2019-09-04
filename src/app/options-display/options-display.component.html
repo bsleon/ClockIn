@@ -1,7 +1,10 @@
 <div class="row">
     <div class="col">
         <h4>Today's total working time</h4>
-        <h1>7:45:36</h1>
+            <h1 *ngIf="serveTime.counter; else elseBlock">{{ serveTime.clockedInHours }}:{{ serveTime.clockedInMinutes }}:{{ serveTime.clockedInSeconds }} </h1>
+            <ng-template #elseBlock>
+                <h1>00:00:00</h1>
+            </ng-template>
     </div>
     <div class="col">
         <h4>Clock out at:</h4>
@@ -43,9 +46,6 @@
     </div>
     
 </div>
-
-
-<label>{{savedClock}}</label>
 <br>
 <!-- buttons -->
 <button style="margin:5px" class="sprk-c-Button">Click Me</button>
