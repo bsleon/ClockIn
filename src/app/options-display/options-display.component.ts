@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CalculateTime } from '../calculateTime';
 import { timeout } from 'q';
+import { ServeTimeService } from '../serve-time.service';
 
 @Component({
   selector: 'app-options-display',
@@ -9,7 +10,14 @@ import { timeout } from 'q';
 })
 export class OptionsDisplayComponent implements OnInit {
 
-  constructor() { }
+  count:any;
+  clockedInHours:any;
+  clockedInMinutes:any;
+  clockedInSeconds:any;
+
+  constructor(public serveTime:ServeTimeService) { 
+ 
+  }
 
   ngOnInit() {
   }
