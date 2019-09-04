@@ -9,7 +9,6 @@ export class ServeTimeService {
 
   clockInTime:any;
   clockOutTime:any;
-  
   rows: any[];
 
   constructor() { }
