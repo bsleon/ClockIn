@@ -17,6 +17,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ClockTableComponent } from './clock-table/clock-table.component';
 import { OptionsDisplayComponent } from './options-display/options-display.component';
 
+// Import ng-circle-progress
+import { NgCircleProgressModule } from 'ng-circle-progress';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,10 +34,25 @@ import { OptionsDisplayComponent } from './options-display/options-display.compo
     AppRoutingModule,
     FormsModule,
     SparkAngularModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    // Specify ng-circle-progress as an import
+    NgCircleProgressModule.forRoot({
+      // set defaults here
+      radius: 100,
+      outerStrokeWidth: 16,
+      innerStrokeWidth: 8,
+      outerStrokeColor: "#78C000",
+      innerStrokeColor: "#C7E596",
+      animationDuration: 300,
+      //showSubtitle: false,
+      subtitle: [
+        "Daily Progress",
+      ],
+      //titleFontSize: "10"
+    })
   ],
   providers: [
-    ServeTimeService, 
+    ServeTimeService,
     TitleBlinkerService],
   bootstrap: [AppComponent]
 })

@@ -95,7 +95,8 @@ h1 {
 .logo-container {
 	display: flex;
 	flex-direction: row;
-	align-items: center
+	align-items: center;
+	margin-left: 20px;
 }
 
 .history-info-container {
@@ -247,12 +248,13 @@ h1 {
 	position: relative;
 	display: flex;
 	align-items: center;
-	justify-content: flex-end
+	justify-content: flex-end;
+	margin-right: 20px;
 }
 
 .profile-container .profile-image__container {
-	width: 60px;
-	height: 60px;
+	width: 100px; //change avatar size
+	height: 100px; //change avatar size
 	border-radius: 50%;
 	-webkit-background-clip: padding-box;
 	background-clip: padding-box;
@@ -261,8 +263,8 @@ h1 {
 }
 
 .profile-container .profile-image__container .profile-image {
-	width: 60px;
-	height: 60px;
+	width: 100px; //change avatar size
+	height: 100px; //change avatar size
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position-y: 50%
@@ -281,8 +283,8 @@ h1 {
 	margin-left: 20px
 }
 
-.profile-container .profile-image__name-container .profile-image__sub-label {
-	color: #aaa
+.profile-container .profile-image__name-container .profile-image__sub-label h4{
+	color: #aaa !important;
 }
 
 .split-header {
