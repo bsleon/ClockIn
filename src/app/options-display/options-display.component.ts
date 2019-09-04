@@ -1,4 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { CalculateTime } from '../calculateTime';
+import { timeout } from 'q';
 import { ServeTimeService } from '../serve-time.service';
 
 @Component({

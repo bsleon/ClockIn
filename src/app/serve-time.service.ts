@@ -9,6 +9,7 @@ export class ServeTimeService {
 
   clockInTime:any;
   clockOutTime:any;
+  rows: any[];
   clockTable:ClockTableComponent;
   clockInOut:ClockInOutComponent;
   runningTime: any;
@@ -16,7 +17,6 @@ export class ServeTimeService {
   clockedInMinutes: any;
   clockedInSeconds: any;
   clockedInMilliseconds: any;
-  rows: any[];
   
   counter: number;
   timerRef;
