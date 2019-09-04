@@ -10,10 +10,8 @@
 </div>
  
 <div class="history-info-container">
-    <span class="left-text">Time Punches from Monday, September 2 to Sunday, September 8.</span>
+    <span class="left-text">Time Punches from {{date | date: 'EEEE LLL d'}} to {{uptoDate | date: 'EEEE LLL d'}}.</span>
 </div>
-
-<button (click)="addColumn()">Add col</button>
 
 <div class="table-responsive">
     <table class="table table-striped table-bordered">

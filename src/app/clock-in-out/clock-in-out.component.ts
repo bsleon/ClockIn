@@ -58,11 +58,11 @@ export class ClockInOutComponent implements OnInit {
       }
       else localStorage.saveClock = 0;
     }
-    this.serveTime.rows.push (
+    this.serveTime.rows.push(
       {
         Date: this.serveTime.tableDate(),
         Clocked_In: this.serveTime.clockInTime,
-        Clocked_Out: this.serveTime.clockOutTime,
+        //Clocked_Out: this.serveTime.clockOutTime,
       }
     );
     alert("You clocked in at: " + localStorage.saveClock);
@@ -77,6 +77,17 @@ export class ClockInOutComponent implements OnInit {
       CalculateTime.setCurrentTime();
       this.serveTime.clockOutTime = CalculateTime.currentTime;
     }
+
+    this.serveTime.rows.fill(
+      {
+        Date: this.serveTime.tableDate(),
+        Clocked_In: this.serveTime.clockInTime,
+        Clocked_Out: this.serveTime.clockOutTime,
+      }
+    );
+    
+
+    alert("You clocked out at: " + localStorage.saveClock);
   }
 
   saveTime() {
@@ -123,6 +134,10 @@ export class ClockInOutComponent implements OnInit {
 
   ngOnDestroy() {
     clearInterval(this.timerRef);
+  }
+
+  createClockEvent(){
+
   }
 
 }
