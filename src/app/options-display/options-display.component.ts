@@ -21,7 +21,6 @@ export class OptionsDisplayComponent implements OnInit {
   }
 
   ngOnInit() {
-    //this.clockedInTime = localStorage.saveClock;
   }
 
 }

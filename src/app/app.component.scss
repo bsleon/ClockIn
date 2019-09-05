@@ -1,44 +1,54 @@
-.digitalClock{
-    //margin:20px;
-    //margin:auto;
-    //width:50%;
-    padding: 10px;
-    // border: solid 2px black;
-    //float: left;
+.digitalClock {
+  //margin:20px;
+  //margin:auto;
+  //width:50%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  padding-left: 40px;
+  // border: solid 2px black;
+  //float: left;
 }
-.analogClock{
-    //margin:20px;
-    // margin:auto;
-    // width:50%;
-    margin-top: 20px;
-    // border: solid 2px black;
+.analogClock {
+  //margin:20px;
+  // margin:auto;
+  // width:50%;
+  margin-top: 20px;
+  // border: solid 2px black;
 }
-.clockInOut{
-    //margin:20px;
-    //margin:auto;
-    //width:50%;
-    //padding: 10px;
-    // border: solid 2px black;
-    //float: left;
-}
-
-.clockTable{
-    // border: solid 2px black;
-    // float: left;
-    //margin: 100px auto;
+.clockInOut {
+  //margin:20px;
+  //margin:auto;
+  //width:50%;
+  //padding: 10px;
+  // border: solid 2px black;
+  //float: left;
 }
 
-.mainTable{
-    margin-left:auto;
-    margin-right:auto;
-    // width:1000px;
-}
-.mainTableRow{
-    height: 400px;
+.clockTable {
+  // border: solid 2px black;
+  // float: left;
+  //margin: 100px auto;
 }
 
-.mainTableData{
-    width:580px;
-    padding-left: 10px;
-    padding-right: 10px;
+.mainTable {
+  margin-left: auto;
+  margin-right: auto;
+  // width:1000px;
+}
+.mainTableRow {
+  height: 320px;
+}
+.dClockandButtons {
+  padding-left: 110px;
+}
+.right-display {
+  padding-top: 60px;
+  padding-left: 100px;
+}
+
+.mainTableData {
+  width: 600px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
