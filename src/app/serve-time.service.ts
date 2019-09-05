@@ -11,6 +11,7 @@ export class ServeTimeService {
   clockInTime:any;
   clockOutTime:any;
   workEndTime: Date;
+  timeSpan: Date;
   rows: any[];
   clockTable:ClockTableComponent;
   clockInOut:ClockInOutComponent;
@@ -25,7 +26,6 @@ export class ServeTimeService {
   counter: number;
   timerRef;
   clockedIn: boolean = false;
-  working: boolean = false;
 
   constructor() {
     this.counter = 0;

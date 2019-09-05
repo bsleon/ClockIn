@@ -1,7 +1,7 @@
 <div sprk-u-JavaScript>
-    <button (click)="clockIn(); ngOnInit()" class="sprk-c-Button buttonClockIn" [attr.disabled]="serveTime.clockedIn ? 'disabled': null"
+    <button (click)="clockIn(); ngOnInit(); pauseTimer()" class="sprk-c-Button buttonClockIn" [attr.disabled]="serveTime.clockedIn ? 'disabled': null"
         [ngClass]="{'sprk-is-Disabled':serveTime.clockedIn}">Clock In</button>
-    <button (click)="clockOut()" class="sprk-c-Button sprk-is-Disabled buttonClockOut"
+    <button (click)="clockOut(); startTimer()" class="sprk-c-Button sprk-is-Disabled buttonClockOut"
         [attr.disabled]="serveTime.clockedIn ? null: 'disabled'" [ngClass]="{'sprk-is-Disabled':!serveTime.clockedIn}">Clock Out</button>
 </div>
 <div>

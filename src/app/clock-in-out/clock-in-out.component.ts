@@ -1,8 +1,8 @@
 import { Component, OnInit, HostListener, Input } from '@angular/core';
 import { CalculateTime } from '../calculateTime';
-import { ClockTableComponent } from '../clock-table/clock-table.component';
 import { ServeTimeService } from '../serve-time.service';
 import { TitleBlinkerService } from '../title-blinker.service';
+import { timeout } from 'q';
 
 @Component({
   selector: 'app-clock-in-out',
@@ -14,13 +14,18 @@ export class ClockInOutComponent implements OnInit {
   public clockInTime: any;
   public clockOutTime: any;
   public workEndTime: Date;
-  //totalTime: any;
+  public startTime: Date;
+  public breakEventIn: Date;
+  public breakEventOut: Date;
+  public timeSpan: Date;
   savedTime: number;
   savedClock: number;
-  //startText = 'Start';
-  //private clockedIn: boolean = false;
   clockedIn: boolean;
   working: boolean = false;
+  break: boolean = false;
+  start: boolean = false;
+  interval;
+  timeOut: number;
 
   clockHoursPrediction: any;
 
@@ -36,15 +41,23 @@ export class ClockInOutComponent implements OnInit {
   clockIn() {
     if (!this.serveTime.clockedIn) {
       this.clockInTime = new Date();
+      if (!this.start) {
+        this.start = !this.start;
+        this.startTime = new Date();
+      }
       if (!this.working) {
         this.working = !this.working;
         this.workEndTime = new Date();
-        this.workEndTime.setHours(this.workEndTime.getHours() + 8);
+        if(this.timeOut =  0){
+          this.workEndTime.setHours(this.workEndTime.getHours() + 8);
+        }
+        else{
+          this.workEndTime.setHours(this.workEndTime.getHours() + 8);
+          this.workEndTime.setSeconds(this.workEndTime.getSeconds() + this.timeOut);
+        }
       }
-      //this.totalTime = 0;
       this.serveTime.runningTime = 0;
       this.serveTime.toggleTimer();
-      //this.clockTable.addColumn(this.clockInTime);
       CalculateTime.setCurrentTime();
       this.serveTime.clockInTime = CalculateTime.currentTime;
       this.serveTime.workEndTime = this.workEndTime;
@@ -55,17 +68,15 @@ export class ClockInOutComponent implements OnInit {
         {
           Date: this.serveTime.tableDate(),
           Clocked_In: this.serveTime.clockInTime,
-          //Clocked_Out: this.serveTime.clockOutTime,
         }
       );
+      alert(this.timeOut);
     }
-    //alert("You clocked in at: " + localStorage.saveClock);
   }
 
   clockOut() {
     if (this.serveTime.clockedIn) {
-      this.clockOutTime = new Date(Date.now());
-      //this.totalTime += ((this.clockOutTime - this.clockInTime) / 1000).toFixed(2);
+      this.clockOutTime = new Date();
       this.serveTime.toggleTimer();
       this.serveTime.clockOutTime = this.clockOutTime;
       CalculateTime.setCurrentTime();
@@ -79,7 +90,6 @@ export class ClockInOutComponent implements OnInit {
         Clocked_Out: this.serveTime.clockOutTime,
       }
     );
-    //alert("You clocked out at: " + localStorage.saveClock);
   }
 
   saveTime() {
@@ -89,12 +99,10 @@ export class ClockInOutComponent implements OnInit {
       }
       else localStorage.saveTheTime = 0;
     }
-    //alert("Save Time is: " + localStorage.saveTheTime);
   }
 
   clearTimer() {
     this.serveTime.clockedIn = false;
-    //this.startText = 'Start';
     this.serveTime.counter = undefined;
     clearInterval(this.serveTime.timerRef);
   }
@@ -103,4 +111,16 @@ export class ClockInOutComponent implements OnInit {
     clearInterval(this.serveTime.timerRef);
   }
 
+  startTimer() {
+    this.timeOut = 0;
+    this.interval = setInterval(() => {
+      if(this.timeOut <= 100000) {
+        this.timeOut++;
+      } 
+    },1000)
+  }
+
+  pauseTimer() {
+    clearInterval(this.interval);
+  }
 }
