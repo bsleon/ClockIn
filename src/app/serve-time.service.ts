@@ -8,21 +8,21 @@ import { OptionsDisplayComponent } from './options-display/options-display.compo
 })
 export class ServeTimeService {
 
-  clockInTime:any;
-  clockOutTime:any;
+  clockInTime: any;
+  clockOutTime: any;
   workEndTime: Date;
   timeSpan: Date;
   rows: any[];
-  clockTable:ClockTableComponent;
-  clockInOut:ClockInOutComponent;
-  optionsDisplay:OptionsDisplayComponent;
+  clockTable: ClockTableComponent;
+  clockInOut: ClockInOutComponent;
+  optionsDisplay: OptionsDisplayComponent;
   runningTime: any;
   clockedInHours: any;
   clockedInMinutes: any;
   clockedInSeconds: any;
   clockedInMilliseconds: any;
   currentTime: any;
-  
+
   counter: number;
   timerRef;
   clockedIn: boolean = false;
@@ -34,16 +34,28 @@ export class ServeTimeService {
     this.clockedInMinutes = 0;
     this.clockedInSeconds = 0;
     this.clockedInMilliseconds = 0;
-   }
+  }
+
+  // calculateDailyProgress() {
+  //     var time = new Date();
+  //     var curTime = time.getTime();
+  //     var endTime = this.workEndTime.getTime();
+  //     var ratio = (curTime / endTime) * 100;
+  //     // alert("curTime is: " + curTime);
+  //     // alert("endTime is: " + endTime);
+  //     // alert("ratio is: " + ratio);
+  //     //this.cdr.detectChanges();
+  //     return ratio;
+  // }
 
   tableDate() {
 
     const date = new Date();
-    const weekDay = date.toLocaleDateString('default', {weekday: 'long'});
+    const weekDay = date.toLocaleDateString('default', { weekday: 'long' });
     const dayOfMonth = date.getDate();
-    const month = date.toLocaleDateString('default', {month: 'long'});
+    const month = date.toLocaleDateString('default', { month: 'long' });
     var currentDate = weekDay + ", " + month + " " + dayOfMonth;
-    
+
     return currentDate;
   }
 
@@ -72,11 +84,11 @@ export class ServeTimeService {
 
   }
 
-  getCounter(){
+  getCounter() {
     return this.counter;
   }
 
-  setClockedIn(){
+  setClockedIn() {
     return this.clockedIn
   }
 

@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col">
-        <h4>Today's total working time</h4>
+        <h4>Today's total time:</h4>
         <h1 *ngIf="serveTime.counter; else elseBlock">
             {{ serveTime.clockedInHours }}:{{ serveTime.clockedInMinutes }}:{{ serveTime.clockedInSeconds }} </h1>
         <ng-template #elseBlock>
@@ -8,7 +8,7 @@
         </ng-template>
     </div>
     <div class="col">
-        <h4>Clock out at:</h4>
+        <h4>Clock out target:</h4>
         <h1 *ngIf="serveTime.workEndTime; else elseBlock">{{serveTime.workEndTime | date:'shortTime'}}</h1>
         <ng-template #elseBlock>
             <h1>00:00</h1>
@@ -17,49 +17,24 @@
 </div>
 <div class="row">
     <div class="col">
-        <h4>Week's total working time</h4>
+        <h4>This week's total time:</h4>
         <h1>38:23:02</h1>
     </div>
 
     <div class="col">
-        <circle-progress [percent]="56" [radius]="50" [outerStrokeWidth]="8" [innerStrokeWidth]="4"
-            [outerStrokeColor]="'#01947E'" [innerStrokeColor]="'#80D9CB'" [animation]="true" [animationDuration]="300">
+        <circle-progress 
+        [percent]="55" 
+        [radius]="50" 
+        [outerStrokeWidth]="8" 
+        [innerStrokeWidth]="4"
+        [outerStrokeColor]="'#01947E'" 
+        [innerStrokeColor]="'#80D9CB'" 
+        [animation]="true" 
+        [animationDuration]="300">
 
         </circle-progress>
+        <!-- <h4>{{new Date().getTime()}}</h4> -->
+        <!-- <h4 *ngIf="serveTime.workEndTime">{{serveTime.workEndTime.getTime()}}</h4> -->
     </div>
 
 </div>
-
-<!-- check boxes -->
-<div class="row">
-    <div class="col">
-        <div class="checkbox">
-            <label><input type="checkbox" value="">Option 1</label>
-        </div>
-        <div class="checkbox">
-            <label><input type="checkbox" value="">Option 2</label>
-        </div>
-        <div class="checkbox disabled">
-            <label><input type="checkbox" value="" disabled>Option 3</label>
-        </div>
-    </div>
-
-    <!-- radio buttons -->
-    <div class="col">
-        <div class="radio">
-            <label><input type="radio" name="optradio" checked>Option 1</label>
-        </div>
-        <div class="radio">
-            <label><input type="radio" name="optradio">Option 2</label>
-        </div>
-        <div class="radio disabled">
-            <label><input type="radio" name="optradio" disabled>Option 3</label>
-        </div>
-    </div>
-
-</div>
-<br>
-<!-- buttons -->
-<button style="margin:5px" class="sprk-c-Button">Click Me</button>
-<button style="margin:5px" class="sprk-c-Button">Click Me</button>
-<button style="margin:5px" class="sprk-c-Button">Click Me</button>
