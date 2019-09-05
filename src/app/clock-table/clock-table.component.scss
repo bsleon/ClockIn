@@ -1,55 +1,75 @@
-.clockin-table, th, tr, td{
-    border: solid 1px black;
+.clockin-table,
+th,
+tr,
+td {
+  border: solid 1px black;
 }
 
 .table-message {
-    font-family: "Myriad-Pro","Lucida Grande","Lucida Sans","Lucida Sans Unicode","Arial","Helvetica",sans-serif;
-    font-size: 16px;
-    align-items: center;
-    //padding-bottom: 25px;
+  font-family: "Myriad-Pro", "Lucida Grande", "Lucida Sans", "Lucida Sans Unicode", "Arial", "Helvetica", sans-serif;
+  font-size: 16px;
+  align-items: center;
+  //padding-bottom: 25px;
 }
 
 div {
-    display: block;
+  display: block;
 }
 
 .history-info-container {
-    color: rgb(151, 207, 243);
+  color: rgb(151, 207, 243);
 }
 
 .history-info-container {
-    font-size: 14px;
-    font-family: "Quatro-Slab","Lucida Bright","times new roman",serif;
+  font-size: 14px;
+  font-family: "Quatro-Slab", "Lucida Bright", "times new roman", serif;
 }
 
 .table-responsive {
-    border-top-color: rgb(58, 58, 58);
-    border-right-color: rgb(58, 58, 58);
-    border-bottom-color: rgb(58, 58, 58);
-    border-left-color: rgb(58, 58, 58);
+  border-top-color: rgb(58, 58, 58);
+  border-right-color: rgb(58, 58, 58);
+  border-bottom-color: rgb(58, 58, 58);
+  border-left-color: rgb(58, 58, 58);
 }
 
 .table > thead > tr {
-    background-color: rgb(27, 106, 155);
+  background-color: rgb(27, 106, 155);
 }
 
-.info-container:before {
-	font-family: 'FontAwesome';
-	// content: url(/assets/images/anonAvatar.png);
-	background-image: url(/assets/images/info.png);
-	background-size: 30px 30px;
-	width: 30px;
-	height: 30px;
-	content:"";
-	color: #2081bf;
-	font-size: 32px;
-    margin-right: 10px;
+.table-container:before {
+  font-family: "FontAwesome";
+  // content: url(/assets/images/anonAvatar.png);
+  background-image: url(/assets/images/info.png);
+  background-size: 30px 30px;
+  width: 30px;
+  height: 30px;
+  content: "";
+  color: #2081bf;
+  font-size: 32px;
+  margin-right: 10px;
 }
 
 .info-container .info-message {
-	font-weight: bold;
-	color: #0c4569;
-	font-size: 15px;
+  font-weight: bold;
+  color: #0c4569;
+  font-size: 15px;
+  align-items: center;
+  padding-bottom: 25px;
+}
+
+.table-container{
+    font-weight: bold;
+    color: #0c4569;
+    font-size: 15px;
+    align-items: center;
+    padding-bottom: 25px;
+    height:100%;
+}
+
+.table-message {
+    font-weight: bold;
+    color: #0c4569;
+    font-size: 12px !important;
     align-items: center;
     padding-bottom: 25px;
 }

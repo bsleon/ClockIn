@@ -108,7 +108,7 @@ h1 {
 .info-container:before {
   font-family: "FontAwesome";
   // content: url(/assets/images/anonAvatar.png);
-  background-image: url(/assets/images/info.png);
+  background-image: url(src/assets/images/info.png);
   background-size: 30px 30px;
   width: 30px;
   height: 30px;
@@ -118,13 +118,25 @@ h1 {
   margin-right: 10px;
 }
 
-.info-container .info-message {
+.info-container {
   font-weight: bold;
   color: #0c4569;
   font-size: 13px;
   align-items: center;
-  text-align: center;
 }
+
+.info-message {
+  font-weight: bold;
+  color: #0c4569;
+  font-size: 13px;
+  align-items: center;
+  //text-align: center;
+}
+
+.time-card{
+	//font-size: 10px;
+}
+
 // .tracking-container {
 // 	// display: flex;
 // 	// flex-direction: row;
