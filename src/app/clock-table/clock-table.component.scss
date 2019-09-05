@@ -36,18 +36,18 @@ div {
   background-color: rgb(27, 106, 155);
 }
 
-.table-container:before {
-  font-family: "FontAwesome";
-  // content: url(/assets/images/anonAvatar.png);
-  background-image: url(/assets/images/info.png);
-  background-size: 30px 30px;
-  width: 30px;
-  height: 30px;
-  content: "";
-  color: #2081bf;
-  font-size: 32px;
-  margin-right: 10px;
-}
+// .table-container:before {
+//   font-family: "FontAwesome";
+//   // content: url(/assets/images/anonAvatar.png);
+//   background-image: url(/assets/images/info.png);
+//   background-size: 30px 30px;
+//   width: 30px;
+//   height: 30px;
+//   content: "";
+//   color: #2081bf;
+//   font-size: 32px;
+//   margin-right: 10px;
+// }
 
 .info-container .info-message {
   font-weight: bold;
