@@ -20,8 +20,11 @@ export class ClockInOutComponent implements OnInit {
   //startText = 'Start';
   //private clockedIn: boolean = false;
   clockedIn: boolean;
+  working: boolean = false;
 
-  constructor(private serveTime:ServeTimeService, private titleBlinker:TitleBlinkerService) {
+  clockHoursPrediction: any;
+
+  constructor(private serveTime: ServeTimeService, private titleBlinker: TitleBlinkerService) {
 
   }
 
@@ -33,8 +36,11 @@ export class ClockInOutComponent implements OnInit {
   clockIn() {
     if (!this.serveTime.clockedIn) {
       this.clockInTime = new Date();
-      this.workEndTime = new Date();
-      this.workEndTime.setHours(this.workEndTime.getHours() + 8);
+      if (!this.working) {
+        this.working = !this.working;
+        this.workEndTime = new Date();
+        this.workEndTime.setHours(this.workEndTime.getHours() + 8);
+      }
       //this.totalTime = 0;
       this.serveTime.runningTime = 0;
       this.serveTime.toggleTimer();
@@ -42,18 +48,17 @@ export class ClockInOutComponent implements OnInit {
       CalculateTime.setCurrentTime();
       this.serveTime.clockInTime = CalculateTime.currentTime;
       this.serveTime.workEndTime = this.workEndTime;
-      
-    }
-    if(typeof(Storage) != "undefined"){
+      if (typeof (Storage) != "undefined") {
         localStorage.saveClock = this.serveTime.clockInTime;
-    }
-    this.serveTime.rows.push(
-      {
-        Date: this.serveTime.tableDate(),
-        Clocked_In: this.serveTime.clockInTime,
-        //Clocked_Out: this.serveTime.clockOutTime,
       }
-    );
+      this.serveTime.rows.push(
+        {
+          Date: this.serveTime.tableDate(),
+          Clocked_In: this.serveTime.clockInTime,
+          //Clocked_Out: this.serveTime.clockOutTime,
+        }
+      );
+    }
     //alert("You clocked in at: " + localStorage.saveClock);
   }
 
@@ -72,19 +77,19 @@ export class ClockInOutComponent implements OnInit {
         Date: this.serveTime.tableDate(),
         Clocked_In: this.serveTime.clockInTime,
         Clocked_Out: this.serveTime.clockOutTime,
-      }  
+      }
     );
     //alert("You clocked out at: " + localStorage.saveClock);
   }
 
   saveTime() {
-    if(typeof(Storage) != "undefined"){
-      if(localStorage.saveTheTime){
+    if (typeof (Storage) != "undefined") {
+      if (localStorage.saveTheTime) {
         localStorage.saveTheTime = this.serveTime.counter;
       }
       else localStorage.saveTheTime = 0;
     }
-    alert("Save Time is: " + localStorage.saveTheTime);
+    //alert("Save Time is: " + localStorage.saveTheTime);
   }
 
   clearTimer() {

@@ -14,12 +14,14 @@ export class OptionsDisplayComponent implements OnInit {
   clockedInHours:any;
   clockedInMinutes:any;
   clockedInSeconds:any;
+  clockedInTime:any;
 
   constructor(public serveTime:ServeTimeService) { 
  
   }
 
   ngOnInit() {
+    //this.clockedInTime = localStorage.saveClock;
   }
 
 }

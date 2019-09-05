@@ -24,6 +24,14 @@ export class CalculateTime{
 
       this.currentTime = this.currentHours + ":" + this.currentMinutes + this.ampm;
     }
+
+    public static formatHours(hour:number){
+      const time = new Date(Date.now());
+      var hour = time.getHours();
+      var ampm = hour >= 12 ? "PM" : "AM";
+      hour = hour % 12;
+      hour = hour ? hour : 12;
+    }
   
     public static updateTime() {
       setInterval(() => {
