@@ -1,14 +1,18 @@
 <div class="row">
     <div class="col">
         <h4>Today's total working time</h4>
-            <h1 *ngIf="serveTime.counter; else elseBlock">{{ serveTime.clockedInHours }}:{{ serveTime.clockedInMinutes }}:{{ serveTime.clockedInSeconds }} </h1>
-            <ng-template #elseBlock>
-                <h1>00:00:00</h1>
-            </ng-template>
+        <h1 *ngIf="serveTime.counter; else elseBlock">
+            {{ serveTime.clockedInHours }}:{{ serveTime.clockedInMinutes }}:{{ serveTime.clockedInSeconds }} </h1>
+        <ng-template #elseBlock>
+            <h1>00:00:00</h1>
+        </ng-template>
     </div>
     <div class="col">
         <h4>Clock out at:</h4>
-        <h1>{{serveTime.workEndTime | date:'shortTime'}}</h1>
+        <h1 *ngIf="serveTime.workEndTime; else elseBlock">{{serveTime.workEndTime | date:'shortTime'}}</h1>
+        <ng-template #elseBlock>
+            <h1>00:00</h1>
+        </ng-template>
     </div>
 </div>
 <div class="row">
@@ -18,18 +22,11 @@
     </div>
 
     <div class="col">
-    <circle-progress 
-        [percent]="56" 
-        [radius]="50" 
-        [outerStrokeWidth]="8" 
-        [innerStrokeWidth]="4"
-        [outerStrokeColor]="'#01947E'" 
-        [innerStrokeColor]="'#80D9CB'" 
-        [animation]="true" 
-        [animationDuration]="300">
-        
-    </circle-progress>
-</div>
+        <circle-progress [percent]="56" [radius]="50" [outerStrokeWidth]="8" [innerStrokeWidth]="4"
+            [outerStrokeColor]="'#01947E'" [innerStrokeColor]="'#80D9CB'" [animation]="true" [animationDuration]="300">
+
+        </circle-progress>
+    </div>
 
 </div>
 
