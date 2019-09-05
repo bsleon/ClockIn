@@ -9,7 +9,7 @@ import { ServeTimeService } from '../serve-time.service';
 })
 export class ClockTableComponent implements OnInit {
   columns: string[];
-  date = new Date();
+  dateNow = new Date();
   uptoDate = new Date();
 
   constructor(private serveTime:ServeTimeService) { }
@@ -17,8 +17,8 @@ export class ClockTableComponent implements OnInit {
   ngOnInit() {
     this.columns = ["Date", "Clocked_In", "Clocked_Out"];
     this.serveTime.rows = [];
-    this.date = new Date();
-    this.date.setDate( this.date.getDate() + 3 );
+    this.dateNow = new Date();
+    this.uptoDate.setDate( this.dateNow.getDate() + 3 );
   }
 
 

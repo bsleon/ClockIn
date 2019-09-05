@@ -13,6 +13,7 @@ export class ClockInOutComponent implements OnInit {
 
   public clockInTime: any;
   public clockOutTime: any;
+  public workEndTime: Date;
   //totalTime: any;
   savedTime: number;
   savedClock: number;
@@ -32,12 +33,16 @@ export class ClockInOutComponent implements OnInit {
   clockIn() {
     if (!this.serveTime.clockedIn) {
       this.clockInTime = new Date();
+      this.workEndTime = new Date();
+      this.workEndTime.setHours(this.workEndTime.getHours() + 8);
       //this.totalTime = 0;
       this.serveTime.runningTime = 0;
       this.serveTime.toggleTimer();
       //this.clockTable.addColumn(this.clockInTime);
       CalculateTime.setCurrentTime();
       this.serveTime.clockInTime = CalculateTime.currentTime;
+      this.serveTime.workEndTime = this.workEndTime;
+      
     }
     if(typeof(Storage) != "undefined"){
         localStorage.saveClock = this.serveTime.clockInTime;
@@ -49,7 +54,7 @@ export class ClockInOutComponent implements OnInit {
         //Clocked_Out: this.serveTime.clockOutTime,
       }
     );
-    alert("You clocked in at: " + localStorage.saveClock);
+    //alert("You clocked in at: " + localStorage.saveClock);
   }
 
   clockOut() {
@@ -69,7 +74,7 @@ export class ClockInOutComponent implements OnInit {
         Clocked_Out: this.serveTime.clockOutTime,
       }  
     );
-    alert("You clocked out at: " + localStorage.saveClock);
+    //alert("You clocked out at: " + localStorage.saveClock);
   }
 
   saveTime() {
