@@ -20,7 +20,9 @@ export class ClockInOutComponent implements OnInit {
   //private clockedIn: boolean = false;
   clockedIn: boolean;
 
-  constructor(private serveTime:ServeTimeService, private titleBlinker:TitleBlinkerService) {
+  clockHoursPrediction: any;
+
+  constructor(private serveTime: ServeTimeService, private titleBlinker: TitleBlinkerService) {
 
   }
 
@@ -31,25 +33,26 @@ export class ClockInOutComponent implements OnInit {
 
   clockIn() {
     if (!this.serveTime.clockedIn) {
-      this.clockInTime = new Date();
+      //this.clockInTime = new Date();
       //this.totalTime = 0;
       this.serveTime.runningTime = 0;
       this.serveTime.toggleTimer();
       //this.clockTable.addColumn(this.clockInTime);
       CalculateTime.setCurrentTime();
       this.serveTime.clockInTime = CalculateTime.currentTime;
-    }
-    if(typeof(Storage) != "undefined"){
+
+      if (typeof (Storage) != "undefined") {
         localStorage.saveClock = this.serveTime.clockInTime;
-    }
-    this.serveTime.rows.push(
-      {
-        Date: this.serveTime.tableDate(),
-        Clocked_In: this.serveTime.clockInTime,
-        //Clocked_Out: this.serveTime.clockOutTime,
       }
-    );
-    alert("You clocked in at: " + localStorage.saveClock);
+      this.serveTime.rows.push(
+        {
+          Date: this.serveTime.tableDate(),
+          Clocked_In: this.serveTime.clockInTime,
+          //Clocked_Out: this.serveTime.clockOutTime,
+        }
+      );
+      //alert("You clocked in at: " + localStorage.saveClock);
+    }
   }
 
   clockOut() {
@@ -67,19 +70,23 @@ export class ClockInOutComponent implements OnInit {
         Date: this.serveTime.tableDate(),
         Clocked_In: this.serveTime.clockInTime,
         Clocked_Out: this.serveTime.clockOutTime,
-      }  
+      }
     );
-    alert("You clocked out at: " + localStorage.saveClock);
+    //alert("You clocked out at: " + localStorage.saveClock);
+  }
+
+  setClockOutPrediction() {
+    this.clockHoursPrediction = CalculateTime.currentHours;
   }
 
   saveTime() {
-    if(typeof(Storage) != "undefined"){
-      if(localStorage.saveTheTime){
+    if (typeof (Storage) != "undefined") {
+      if (localStorage.saveTheTime) {
         localStorage.saveTheTime = this.serveTime.counter;
       }
       else localStorage.saveTheTime = 0;
     }
-    alert("Save Time is: " + localStorage.saveTheTime);
+    //alert("Save Time is: " + localStorage.saveTheTime);
   }
 
   clearTimer() {

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ClockTableComponent } from './clock-table/clock-table.component';
 import { ClockInOutComponent } from './clock-in-out/clock-in-out.component';
+import { OptionsDisplayComponent } from './options-display/options-display.component';
 
 @Injectable({
   providedIn: 'root'
@@ -12,11 +13,13 @@ export class ServeTimeService {
   rows: any[];
   clockTable:ClockTableComponent;
   clockInOut:ClockInOutComponent;
+  optionsDisplay:OptionsDisplayComponent;
   runningTime: any;
   clockedInHours: any;
   clockedInMinutes: any;
   clockedInSeconds: any;
   clockedInMilliseconds: any;
+  currentTime: any;
   
   counter: number;
   timerRef;
