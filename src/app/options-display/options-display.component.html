@@ -23,18 +23,20 @@
 
     <div class="col">
         <circle-progress 
-        [percent]="55" 
+        [percent]="serveTime.ratio" 
         [radius]="50" 
         [outerStrokeWidth]="8" 
         [innerStrokeWidth]="4"
         [outerStrokeColor]="'#01947E'" 
         [innerStrokeColor]="'#80D9CB'" 
-        [animation]="true" 
-        [animationDuration]="300">
+        [animation]="false" 
+        [animationDuration]="300"
+        [toFixed]="2">
 
         </circle-progress>
-        <!-- <h4>{{new Date().getTime()}}</h4> -->
-        <!-- <h4 *ngIf="serveTime.workEndTime">{{serveTime.workEndTime.getTime()}}</h4> -->
+        <!-- <h4>{{serveTime.currentTime}}Current Time</h4>
+        <h4>{{serveTime.endTime}}End Time</h4>
+        <h4>{{serveTime.ratio}}Ratio</h4> -->
     </div>
 
 </div>

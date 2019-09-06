@@ -25,31 +25,49 @@ export class ServeTimeService {
 
   counter: number;
   timerRef;
+  timerRef2;
   clockedIn: boolean = false;
+  isCalcProgress: boolean = false;
+  ratio: any;
+  curTime: any;
+  endTime: any;
 
   constructor() {
     this.counter = 0;
-    //this.totalTime = 0;
     this.clockedInHours = 0;
     this.clockedInMinutes = 0;
     this.clockedInSeconds = 0;
     this.clockedInMilliseconds = 0;
   }
 
-  // calculateDailyProgress() {
-  //     var time = new Date();
-  //     var curTime = time.getTime();
-  //     var endTime = this.workEndTime.getTime();
-  //     var ratio = (curTime / endTime) * 100;
-  //     // alert("curTime is: " + curTime);
-  //     // alert("endTime is: " + endTime);
-  //     // alert("ratio is: " + ratio);
-  //     //this.cdr.detectChanges();
-  //     return ratio;
-  // }
+  calculateDailyProgress() {
+    this.isCalcProgress = !this.isCalcProgress;
+    if (this.isCalcProgress) {
+      this.timerRef2 = setInterval(() => {
+        var time = new Date();
+        this.curTime = time.getTime();
+
+        this.currentTime = 
+          time.getHours() + 
+          time.getMinutes()/60 +
+          time.getSeconds()/3600;
+        this.endTime = 
+          this.workEndTime.getHours() + 
+          this.workEndTime.getMinutes()/60 +
+          this.workEndTime.getSeconds()/3600;
+
+        //also add break time to the 8 in the future
+        this.ratio = ((8-(this.endTime - this.currentTime))/(8)) * 100;
+
+        return this.ratio;
+      });
+    }
+    else {
+      clearInterval(this.timerRef2);
+    }
+  }
 
   tableDate() {
-
     const date = new Date();
     const weekDay = date.toLocaleDateString('default', { weekday: 'long' });
     const dayOfMonth = date.getDate();
@@ -62,7 +80,6 @@ export class ServeTimeService {
   toggleTimer() {
     this.clockedIn = !this.clockedIn;
     if (this.clockedIn) {
-      //this.startText = 'Stop';
       const startTime = Date.now() - (this.counter || 0);
       this.timerRef = setInterval(() => {
         this.counter = Date.now() - startTime;
@@ -78,7 +95,6 @@ export class ServeTimeService {
 
     }
     else {
-      //this.startText = 'Resume';
       clearInterval(this.timerRef);
     }
 

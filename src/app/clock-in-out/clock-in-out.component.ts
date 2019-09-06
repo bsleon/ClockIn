@@ -48,10 +48,10 @@ export class ClockInOutComponent implements OnInit {
       if (!this.working) {
         this.working = !this.working;
         this.workEndTime = new Date();
-        if(this.timeOut =  0){
+        if (this.timeOut = 0) {
           this.workEndTime.setHours(this.workEndTime.getHours() + 8);
         }
-        else{
+        else {
           this.workEndTime.setHours(this.workEndTime.getHours() + 8);
           this.workEndTime.setSeconds(this.workEndTime.getSeconds() + this.timeOut);
         }
@@ -71,6 +71,9 @@ export class ClockInOutComponent implements OnInit {
         }
       );
       alert(this.timeOut);
+
+      this.serveTime.calculateDailyProgress();
+
     }
   }
 
@@ -81,15 +84,18 @@ export class ClockInOutComponent implements OnInit {
       this.serveTime.clockOutTime = this.clockOutTime;
       CalculateTime.setCurrentTime();
       this.serveTime.clockOutTime = CalculateTime.currentTime;
+
+      this.serveTime.rows.pop();
+      this.serveTime.rows.push(
+        {
+          Date: this.serveTime.tableDate(),
+          Clocked_In: this.serveTime.clockInTime,
+          Clocked_Out: this.serveTime.clockOutTime,
+        }
+      );
+
+      this.serveTime.calculateDailyProgress();
     }
-    this.serveTime.rows.pop();
-    this.serveTime.rows.push(
-      {
-        Date: this.serveTime.tableDate(),
-        Clocked_In: this.serveTime.clockInTime,
-        Clocked_Out: this.serveTime.clockOutTime,
-      }
-    );
   }
 
   saveTime() {
@@ -114,10 +120,10 @@ export class ClockInOutComponent implements OnInit {
   startTimer() {
     this.timeOut = 0;
     this.interval = setInterval(() => {
-      if(this.timeOut <= 100000) {
+      if (this.timeOut <= 100000) {
         this.timeOut++;
-      } 
-    },1000)
+      }
+    }, 1000)
   }
 
   pauseTimer() {
